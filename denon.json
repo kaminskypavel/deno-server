@@ -1,0 +1,13 @@
+{
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "scripts": {
+    "start": {
+      "cmd": "deno run src/app.ts",
+      "desc": "Run the main server.",
+      "allow": [
+        "env",
+        "net"
+      ]
+    }
+  }
+}
