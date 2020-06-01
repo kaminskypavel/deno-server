@@ -1,4 +1,4 @@
-import * as expressive from "https://raw.githubusercontent.com/NMathar/deno-express/master/mod.ts";
+import {expressive} from "./../deps.ts"
 
 const port = 3000;
 const app = new expressive.App();
