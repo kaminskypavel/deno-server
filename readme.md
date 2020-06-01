@@ -1,10 +1,11 @@
 ### auto-reload
-install denon
+make sure 'denon' is installed and in PATH
 ```
 deno install --allow-read --allow-run --allow-write -f --unstable https://deno.land/x/denon/denon.ts
 ```
-add to PATH. and run 
+ 
+### Run
 
 ```
-denon run --allow-env --allow-net index.ts
+denon run index.ts
 ```
