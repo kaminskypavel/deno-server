@@ -1,9 +1,15 @@
-import {serve} from "https://deno.land/std/http/server.ts";
+import * as expressive from "https://raw.githubusercontent.com/NMathar/deno-express/master/mod.ts";
 
-const server = serve({port: 8000});
+const port = 3000;
+const app = new expressive.App();
+app.use(expressive.simpleLog());
 
-console.log("listening on http://localhost:8000/");
+app.use(expressive.static_("./public"));
+app.use(expressive.bodyParser.json());
 
-for await (const req of server) {
-    req.respond({body: "hello from deno!"});
-}
+app.get("/", async (req: expressive.Request, res: expressive.Response) => {
+    await res.json({text: "hello from deno!"});
+});
+
+const server = await app.listen(port);
+console.log("app listening on port " + server.port);
